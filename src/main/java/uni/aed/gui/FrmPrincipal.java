@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package uni.aed.gui;
 
-/**
- *
- * @author marialena
- */
 public class FrmPrincipal extends javax.swing.JFrame {
 
     /**
@@ -71,13 +63,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void mDataSimpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDataSimpleActionPerformed
         // TODO add your handling code here:
-        FrmDataSimple v = new FrmDataSimple();
+        FrmDataSimple v=new FrmDataSimple();
         v.setVisible(true);
     }//GEN-LAST:event_mDataSimpleActionPerformed
 
     private void mDataObjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDataObjectActionPerformed
         // TODO add your handling code here:
-        FrmDirectorio v = new FrmDirectorio();
+        FrmDirectorio v=new FrmDirectorio();
         v.setVisible(true);
     }//GEN-LAST:event_mDataObjectActionPerformed
 
