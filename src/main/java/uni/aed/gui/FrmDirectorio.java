@@ -369,9 +369,13 @@ public class FrmDirectorio extends javax.swing.JFrame {
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
         // TODO add your handling code here:
         Persona[] sortedList;
-        sortedList=dir.sort(Persona.NAME, (String)cbAlgoritmo.getSelectedItem());
+       if (rbNombre.isSelected())
+            sortedList=dir.sort(Persona.NAME,(String)cbAlgoritmo.getSelectedItem());
+        else
+            sortedList=dir.sort(Persona.AGE,(String)cbAlgoritmo.getSelectedItem());
+        
         modeloList2.removeAllElements();
-        for(Persona p:sortedList)
+        for(Persona p: sortedList)
             modeloList2.addElement(p.toString());
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
