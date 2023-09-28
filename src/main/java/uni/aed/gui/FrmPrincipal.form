@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mDataSimple">
               <Properties>
-                <Property name="text" type="java.lang.String" value="DataSimple"/>
+                <Property name="text" type="java.lang.String" value="Data Simple"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mDataSimpleActionPerformed"/>

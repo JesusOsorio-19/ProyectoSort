@@ -73,6 +73,9 @@ public class FrmDataSimple extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         rbSearchLineal = new javax.swing.JRadioButton();
         rbSearchBinaria = new javax.swing.JRadioButton();
+        btnBuscar = new javax.swing.JButton();
+        btnInsertar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Algoritmos Sort && Search");
@@ -229,6 +232,7 @@ public class FrmDataSimple extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Search Algoritmo"));
 
+        rbSearchLineal.setSelected(true);
         rbSearchLineal.setText("Lineal");
 
         rbSearchBinaria.setText("Binaria");
@@ -254,6 +258,17 @@ public class FrmDataSimple extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search-icon20.png"))); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregar-icon18.png"))); // NOI18N
+
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/borrar-icon20.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -274,9 +289,35 @@ public class FrmDataSimple extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(BtnLimpiar)
-                                .addGap(98, 98, 98)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblMetodo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblValor))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cbMetodo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(cbCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                                        .addComponent(jpIntervalo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(BtnLimpiar)
+                                        .addGap(98, 98, 98))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnBuscar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnInsertar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnEliminar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,32 +347,11 @@ public class FrmDataSimple extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(lblFComparaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(lblFIntercambios, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblMsTEjecucion, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblMetodo, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblValor))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cbMetodo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cbCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jpIntervalo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                    .addComponent(lblMsTEjecucion, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)))
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(BtnOrdenar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -366,14 +386,23 @@ public class FrmDataSimple extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72)
-                                .addComponent(BtnOrdenar))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnBuscar))
+                                .addGap(50, 50, 50)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(72, 72, 72))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnEliminar)
+                                            .addComponent(btnInsertar))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(BtnOrdenar)))
                         .addGap(37, 37, 37)
                         .addComponent(lblMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -604,6 +633,65 @@ public class FrmDataSimple extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnGenerarActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        ListaInicial.clearSelection();//para limpiar el resaltado de la busqueda anterior
+        ListaOrdenada.clearSelection();//para limpiar el resaltado de la busqueda anterior
+        if(rbSearchLineal.isSelected()){
+            if(modeloList1.size()<1){
+                JOptionPane.showMessageDialog(this, "La lista se encuentra vacia",
+                        "ERROR",JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(txtValor.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Debe consignar el valor que desea buscar",
+                        "ERROR",JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            Integer[] X =Arrays.stream(modeloList1.toArray())
+                .map(obj->Integer.valueOf(obj.toString())).toArray(Integer[]::new);
+            Search s=new Search();
+            int result=s.Lineal(X, Integer.parseInt(txtValor.getText()));
+            if(result==s.NO_ENCONTRADO)
+                JOptionPane.showMessageDialog(this, "El valor buscado no se encontro en la lista",
+                        "RESULTADO",JOptionPane.WARNING_MESSAGE);
+            else{
+                JOptionPane.showMessageDialog(this, "El valor buscado se encontro en la lista en el registro: " + (result + 1),
+                        "RESULTADO",JOptionPane.WARNING_MESSAGE);
+                ListaInicial.setSelectedIndex(result);//Selecciona el row con el valor
+                ListaInicial.requestFocusInWindow();//Coloca el foco en la lista
+                ListaInicial.requestFocus();//Enfoca la lista
+            }   
+        }
+        //Binaria
+        if(rbSearchBinaria.isSelected()){
+            if(modeloList2.size()<1){
+                JOptionPane.showMessageDialog(this, "La lista se encuentra vacia",
+                        "ERROR",JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if(txtValor.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Debe consignar el valor que desea buscar",
+                        "ERROR",JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            Integer[] X =Arrays.stream(modeloList2.toArray())
+                .map(obj->Integer.valueOf(obj.toString())).toArray(Integer[]::new);
+            Search s=new Search();
+            int result=s.Binaria(X, Integer.parseInt(txtValor.getText()));
+            if(result==s.NO_ENCONTRADO)
+                JOptionPane.showMessageDialog(this, "El valor buscado no se encontro en la lista",
+                        "RESULTADO",JOptionPane.WARNING_MESSAGE);
+            else{
+                JOptionPane.showMessageDialog(this, "El valor buscado se encontro en la lista en el registro: " + (result + 1),
+                        "RESULTADO",JOptionPane.WARNING_MESSAGE);
+                ListaOrdenada.setSelectedIndex(result);//Selecciona el row con el valor
+                ListaOrdenada.requestFocusInWindow();//Coloca el foco en la lista
+                ListaOrdenada.requestFocus();//Enfoca la lista
+            }   
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -647,6 +735,9 @@ public class FrmDataSimple extends javax.swing.JFrame {
     private javax.swing.JButton BtnOrdenar;
     private javax.swing.JList<String> ListaInicial;
     private javax.swing.JList<String> ListaOrdenada;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnInsertar;
     private javax.swing.JComboBox<String> cbCarga;
     private javax.swing.JComboBox<String> cbMetodo;
     private javax.swing.JPanel jPanel1;

@@ -27,7 +27,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Search & Sort Methods");
 
-        mDataSimple.setText("DataSimple");
+        mDataSimple.setText("Data Simple");
         mDataSimple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mDataSimpleActionPerformed(evt);
